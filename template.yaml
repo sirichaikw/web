@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: centos7
+objects:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: web
+  spec:
+    containers:
+    - env:
+      image: dockerfile/redis
+      name: master
+      ports:
+      - containerPort: 6379
+        protocol: TCP
